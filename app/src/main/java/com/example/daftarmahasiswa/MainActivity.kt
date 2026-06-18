@@ -27,6 +27,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -60,7 +61,7 @@ fun MahasiswaList(mahasiswaList: List<Mahasiswa>, modifier: Modifier = Modifier)
         items(mahasiswaList) { mahasiswa ->
             MahasiswaCard(
                 mahasiswa = mahasiswa,
-                modifier = Modifier.padding(8.dp)
+                modifier = Modifier.padding(dimensionResource(R.dimen.padding_small))
             )
         }
     }
@@ -87,9 +88,12 @@ fun MahasiswaTopAppBar(modifier: Modifier = Modifier) {
                     contentDescription = null,
                     modifier = Modifier.size(40.dp)
                 )
-                Spacer(Modifier.width(8.dp))
+                Spacer(Modifier.width(dimensionResource(R.dimen.padding_small)))
 
-                Text(stringResource(R.string.app_name))
+                Text(
+                    stringResource(R.string.app_name),
+
+                )
             }
         },
         modifier = modifier
@@ -105,13 +109,13 @@ fun MahasiswaCard(mahasiswa: Mahasiswa, modifier: Modifier = Modifier) {
                 contentDescription = stringResource(mahasiswa.nameResouceId),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(194.dp),
+                    .height(dimensionResource(R.dimen.height_image)),
                 contentScale = ContentScale.Crop
             )
 
             Text(
                 text = stringResource(mahasiswa.nameResouceId),
-                modifier = Modifier.padding(16.dp),
+                modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
                 style = MaterialTheme.typography.headlineSmall
             )
         }
@@ -121,8 +125,9 @@ fun MahasiswaCard(mahasiswa: Mahasiswa, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    DaftarMahasiswaTheme {
+    DaftarMahasiswaTheme(darkTheme = true) {
+        MahasiswaApp()
 //        MahasiswaCard(Mahasiswa(R.string.Joko, R.drawable.mahasiswa1))
-        MahasiswaTopAppBar()
+//        MahasiswaTopAppBar()
     }
 }
