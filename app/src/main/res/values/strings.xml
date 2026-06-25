@@ -3,4 +3,8 @@
     <string name="Joko">Mahasiswa 1</string>
     <string name="Wulan">Mahasiswa 2</string>
     <string name="Anwar">Mahasiswa 3</string>
+    <string name="email_joko">Mahasiswa1@example.com</string>
+    <string name="email_wulan">Mahasiswa2@example.com</string>
+    <string name="email_anwar">Mahasiswa3@example.com</string>
+    <string name="email_text">Email</string>
 </resources>

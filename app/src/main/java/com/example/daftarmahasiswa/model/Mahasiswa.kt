@@ -5,5 +5,6 @@ import androidx.annotation.StringRes
 
 data class Mahasiswa(
     @StringRes val nameResouceId: Int,
-    @DrawableRes val imageResouceId: Int
+    @DrawableRes val imageResouceId: Int,
+    @StringRes val emailRecouseId: Int
 )
